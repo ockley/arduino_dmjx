@@ -1,9 +1,12 @@
-void setup() {
-  Serial.begin(9600);
+int ledPin = 9;
 
+void setup() {
+  pinMode(ledPin, OUTPUT);
 }
 
 void loop() {
-  Serial.println("Hej, Verden");
-  delay(100);
+  digitalWrite(ledPin, HIGH);
+  delay(1000);
+  digitalWrite(ledPin, LOW);
+  delay(200);
 }
