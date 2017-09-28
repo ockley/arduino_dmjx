@@ -9,10 +9,6 @@ void setup() {
   arduinoPort = new Serial(this, portName, 9600);
 
   //println(Serial.list());
-  String portName = Serial.list()[0]; // Skriv 1,2,3 osv. for at finde den rigtige port
-  arduinoPort = new Serial(this, portName, 9600);
-
-  //println(Serial.list());
   size(800, 600);
 }
 
@@ -32,15 +28,4 @@ void draw() {
   background(255);
   fill(100, 255, 0);
   ellipse(width/2, height/2, value, value);
-
-    if(null != tmp) {
-      // Fjern whitespace rundt om tallet og overfør til integer
-     value = int(tmp.trim());
-    }
-    println(tmp, value);
-  }
-
-    background(255);
-    fill(100, 255, 0);
-    ellipse(width/2, height/2, value, value);
 }
