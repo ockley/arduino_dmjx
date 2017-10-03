@@ -1,12 +1,11 @@
-int ledPin = 9;
+int potPin = 0;
 
 void setup() {
-  pinMode(ledPin, OUTPUT);
+  Serial.begin(9600);
 }
 
 void loop() {
-  digitalWrite(ledPin, HIGH);
-  delay(1000);
-  digitalWrite(ledPin, LOW);
-  delay(200);
+  int value = analogRead(potPin);
+  Serial.print("Pot værdi = ");
+  Serial.println(value);
 }
