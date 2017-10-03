@@ -1,11 +1,12 @@
 const int potPin = 0;   // Sæt i Analog 0;
 int value = 0;  
 
+int potPin = 0;   // Sæt i Analog 0;
+int ledPin = 9;
+int value = 0;
+
 void setup() {
-  int potPin = 0;   // Sæt i Analog 0;
-  int ledPin = 9;
-  int value = 0;
- 
+
   pinMode(ledPin, OUTPUT);
   //Åbn en seriel forbindelse
   Serial.begin(9600);
@@ -24,5 +25,6 @@ void loop() {
 
   // Vent et øjeblik, så du ikke oversvømmer
   // seriel porten med data
+
   delay(50);
 }

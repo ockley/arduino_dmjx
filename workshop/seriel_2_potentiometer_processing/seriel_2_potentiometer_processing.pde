@@ -5,10 +5,16 @@ int value = 100;
 
 void setup() {
   // Skriv 1,2,3 osv. for at finde den rigtige port
-  String portName = Serial.list()[3]; 
+
+  String portName = Serial.list()[0]; 
   arduinoPort = new Serial(this, portName, 9600);
 
-  println(Serial.list());
+  //println(Serial.list());
+  String portName = Serial.list()[0]; // Skriv 1,2,3 osv. for at finde den rigtige port
+  arduinoPort = new Serial(this, portName, 9600);
+
+  //println(Serial.list());
+
   size(800, 600);
 }
 
@@ -19,6 +25,7 @@ void draw() {
     String tmp = arduinoPort.readStringUntil('\n');
     // Test om der har sneget sig en 'null' værdi med
     if (null != tmp) {
+
       // Fjern whitespace rundt om tallet og overfør til integer
       value = int(tmp.trim());
     }
